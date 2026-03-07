@@ -8,7 +8,8 @@ services:
     working_dir: /app
     command: pytest
     depends_on:
-      - db
+      db:
+        condition: service_healthy
   
   db:
     image: postgres:16
