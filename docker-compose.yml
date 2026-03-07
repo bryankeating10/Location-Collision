@@ -2,15 +2,24 @@ services:
 
   app:
     build: .
-    container_name: location-collision-app
+    working_dir: /app
     volumes:
       - .:/app
-    working_dir: /app
-    command: pytest
+    command: python app/main.py
     depends_on:
       db:
         condition: service_healthy
   
+  test:
+    build: .
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: pytest
+    depends_on:
+      db:
+        condition: service_healthy
+
   db:
     image: postgres:16
     container_name: sunbird_db
