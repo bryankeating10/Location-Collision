@@ -17,7 +17,7 @@ class Testers(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String(50), nullable=False)
-    assigned_quant = Column(Integer, ForeignKey='quants.id')
+    assigned_quant = Column(Integer, ForeignKey('quants.id'))
     created_at = Column(DateTime, nullable=False)
 
 class Casinos(Base):
