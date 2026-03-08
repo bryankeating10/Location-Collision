@@ -62,3 +62,64 @@ def create_casino(
         network_rest=network_rest,
         created_at=datetime.now()
     )
+
+    sesh.add(new_casino)
+    sesh.commit()
+    sesh.refresh(new_casino)
+    sesh.close()
+
+    return new_casino
+
+# Add account
+from models import Accounts
+
+def create_account(tester_id, casino_id, username):
+    sesh = get_session()
+
+    account = Accounts(
+        tester=tester_id,
+        casino=casino_id,
+        username=username,
+        created_at=datetime.utcnow()
+    )
+
+    sesh.add(account)
+    sesh.commit()
+    sesh.refresh(account)
+
+    sesh.close()
+    return account
+
+# Add location
+from models import Locations
+
+def create_location(name, address, longitude, latitude):
+    sesh = get_session()
+
+    location = Locations(
+        name=name,
+        address=address,
+        longitude=longitude,
+        latitude=latitude,
+        created_at=datetime.now()
+    )
+
+    sesh.add(location)
+    sesh.commit()
+    sesh.refresh(location)
+
+    sesh.close()
+    return location
+
+# Add action
+from models import Actions
+
+def create_action(category, account_id, location_id):
+    sesh = get_session()
+
+    new_action = Actions(
+        category=category,
+        account=account_id,
+        location=location_id,
+        timestamp=datetime.now()
+    )
