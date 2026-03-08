@@ -16,7 +16,7 @@ db_host = os.getenv("POSTGRES_HOST")
 db_port = os.getenv("POSTGRES_PORT")
 db_name = os.getenv("POSTGRES_NAME")
 
-database_url = f'postgres+psycopg2://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}'
+database_url = f'postgresql+psycopg2://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}'
 
 config.set_main_option("sqlalchemy.url", database_url)
 
