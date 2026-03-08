@@ -32,3 +32,12 @@ class Casinos(Base):
     withdrawal_rest = Column(Boolean, nullable=False)
     network_rest = Column(Boolean, nullable=False)
     created_at = Column(DateTime, nullable=False)
+
+class Accounts(Base):
+    __tablename__ = 'accounts'
+
+    id = Column(Integer, primary_key=True)
+    tester = Column(Integer, ForeignKey('testers.id'))
+    casino = Column(Integer, ForeignKey('casinos.id'))
+    username = Column(String(50), nullable=True)
+    created_at = Column(DateTime, nullable=False)
