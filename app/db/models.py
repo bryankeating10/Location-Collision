@@ -37,8 +37,8 @@ class Accounts(Base):
     __tablename__ = 'accounts'
 
     id = Column(Integer, primary_key=True)
-    tester = Column(Integer, ForeignKey('testers.id'))
-    casino = Column(Integer, ForeignKey('casinos.id'))
+    tester_id = Column(Integer, ForeignKey('testers.id'))
+    casino_id = Column(Integer, ForeignKey('casinos.id'))
     username = Column(String(50), nullable=True)
     created_at = Column(DateTime, nullable=False)
 
@@ -57,6 +57,6 @@ class Actions(Base):
 
     id = Column(Integer, primary_key=True)
     category = Column(String(50), nullable=False)
-    account = Column(Integer, ForeignKey('accounts.id'))
-    location = Column(Integer, ForeignKey('locations.id'))
+    account_id = Column(Integer, ForeignKey('accounts.id'))
+    location_id = Column(Integer, ForeignKey('locations.id'))
     timestamp = Column(DateTime, nullable=False)

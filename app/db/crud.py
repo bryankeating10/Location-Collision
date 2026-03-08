@@ -77,8 +77,8 @@ def create_account(tester_id, casino_id, username):
     sesh = get_session()
 
     account = Accounts(
-        tester=tester_id,
-        casino=casino_id,
+        tester_id=tester_id,
+        casino_id=casino_id,
         username=username,
         created_at=datetime.utcnow()
     )
@@ -119,7 +119,7 @@ def create_action(category, account_id, location_id):
 
     new_action = Actions(
         category=category,
-        account=account_id,
-        location=location_id,
+        account_id=account_id,
+        location_id=location_id,
         timestamp=datetime.now()
     )
