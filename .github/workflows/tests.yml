@@ -6,6 +6,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      POSTGRES_USER: sunbird
+      POSTGRES_PASSWORD: sunbird
+      POSTGRES_DB: sunbird_db
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: 5432
+
     services:
       postgres:
         image: postgres:16
@@ -13,8 +20,6 @@ jobs:
           POSTGRES_USER: sunbird
           POSTGRES_PASSWORD: sunbird
           POSTGRES_DB: sunbird_db
-          POSTGRES_HOST: localhost
-          POSTGRES_PORT: 5432
         ports:
           - 5432:5432
         options: >-
@@ -24,14 +29,26 @@ jobs:
           --health-retries=5
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - run: pip install -r requirements.txt
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-      - run: alembic upgrade head
+      - name: Wait for Postgres
+        run: |
+          until pg_isready -h localhost -p 5432 -U sunbird; do
+            echo "Waiting for postgres..."
+            sleep 2
+          done
 
-      - run: pytest
+      - name: Run migrations
+        run: alembic upgrade head
+
+      - name: Run tests
+        run: pytest
