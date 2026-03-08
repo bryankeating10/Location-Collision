@@ -6,7 +6,10 @@ Base = declarative_base()
 
 class Quants(Base):
     __tablename__ = 'quants'
-    pass
+    
+    id = Column(Integer, primary_key=True)
+    name = Column(String(50), nullable=False)
+    created_at = Column(DateTime, nullable=False)
 
 class Testers(Base):
     __tablename__ = 'testers'
