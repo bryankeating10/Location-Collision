@@ -41,3 +41,22 @@ class Accounts(Base):
     casino = Column(Integer, ForeignKey('casinos.id'))
     username = Column(String(50), nullable=True)
     created_at = Column(DateTime, nullable=False)
+
+class Locations(Base):
+    __tablename__ = 'locations'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String(50), nullable=False)
+    address = Column(String(100), nullable=True)
+    longitude= Column(Float, nullable=False)
+    latitude = Column(Float, nullable=False)
+    created_at = Column(DateTime, nullable=False)
+
+class Actions(Base):
+    __tablename__ = 'actions'
+
+    id = Column(Integer, primary_key=True)
+    category = Column(String(50), nullable=False)
+    account = Column(Integer, ForeignKey('accounts.id'))
+    location = Column(Integer, ForeignKey('locations.id'))
+    timestamp = Column(DateTime, nullable=False)
