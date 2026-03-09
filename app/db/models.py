@@ -24,7 +24,7 @@ class Casinos(Base):
     __tablename__ = 'casinos'
 
     id = Column(Integer, primary_key=True)
-    name = Column(String(50), nullable=False)
+    name = Column(String(50), nullable=False, unique=True)
     network = Column(String(50), nullable=True)
     signup_rest = Column(Boolean, nullable=False) # True if the casino has a signup restriction, False otherwise
     deposit_rest = Column(Boolean, nullable=False) # True if the casino has a deposit restriction, False otherwise

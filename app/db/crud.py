@@ -7,17 +7,17 @@ from .models import Quants
 def create_quant(name: str):
     sesh = get_session()
 
-    new_quant = Quants(
+    quant = Quants(
         name=name,
         created_at=datetime.now()
     )
 
-    sesh.add(new_quant)
+    sesh.add(quant)
     sesh.commit()
-    sesh.refresh(new_quant)
+    sesh.refresh(quant)
     sesh.close()
 
-    return new_quant
+    return quant
 
 # Add tester
 from .models import Testers
@@ -25,18 +25,18 @@ from .models import Testers
 def create_tester(name: str, quant_id: int):
     sesh = get_session()
 
-    new_tester = Testers(
+    tester = Testers(
         name=name,
         assigned_quant=quant_id,
         created_at=datetime.now()
     )
 
-    sesh.add(new_tester)
+    sesh.add(tester)
     sesh.commit()
-    sesh.refresh(new_tester)
+    sesh.refresh(tester)
     sesh.close()
 
-    return new_tester
+    return tester
 
 # Add casino
 from .models import Casinos
@@ -52,7 +52,7 @@ def create_casino(
     
     sesh = get_session()
 
-    new_casino = Casinos(
+    casino = Casinos(
         name=name,
         network=network,
         signup_rest=signup_rest,
@@ -63,12 +63,12 @@ def create_casino(
         created_at=datetime.now()
     )
 
-    sesh.add(new_casino)
+    sesh.add(casino)
     sesh.commit()
-    sesh.refresh(new_casino)
+    sesh.refresh(casino)
     sesh.close()
 
-    return new_casino
+    return casino
 
 # Add account
 from .models import Accounts
@@ -117,9 +117,16 @@ from .models import Actions
 def create_action(category, account_id, location_id):
     sesh = get_session()
 
-    new_action = Actions(
+    action = Actions(
         category=category,
         account_id=account_id,
         location_id=location_id,
         timestamp=datetime.now()
     )
+
+    sesh.add(action)
+    sesh.commit()
+    sesh.refresh(action)
+    sesh.close()
+
+    return action
