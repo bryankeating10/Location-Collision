@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 from app.db.models import Base
 
 # Database connection URL
-DATABASE_URL = 'postgresql+psychopg2://sunbird:sunbird@localhost:5432/sunbird_db'
+DATABASE_URL = 'postgresql+psycopg2://sunbird:sunbird@db:5432/sunbird_db'
 
 # Create the SQLAlchemy engine
 engine = create_engine(DATABASE_URL)

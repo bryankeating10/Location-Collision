@@ -1,8 +1,8 @@
-from db import get_session
+from app.db.db import get_session
 from datetime import datetime
 
 # Add quant
-from models import Quants
+from .models import Quants
 
 def create_quant(name: str):
     sesh = get_session()
@@ -20,7 +20,7 @@ def create_quant(name: str):
     return new_quant
 
 # Add tester
-from models import Testers
+from .models import Testers
 
 def create_tester(name: str, quant_id: int):
     sesh = get_session()
@@ -39,7 +39,7 @@ def create_tester(name: str, quant_id: int):
     return new_tester
 
 # Add casino
-from models import Casinos
+from .models import Casinos
 
 def create_casino(
         name: str,
@@ -71,9 +71,9 @@ def create_casino(
     return new_casino
 
 # Add account
-from models import Accounts
+from .models import Accounts
 
-def create_account(tester_id, casino_id, username):
+def create_account(tester_id, casino_id, username: str = None):
     sesh = get_session()
 
     account = Accounts(
@@ -91,7 +91,7 @@ def create_account(tester_id, casino_id, username):
     return account
 
 # Add location
-from models import Locations
+from .models import Locations
 
 def create_location(name, address, longitude, latitude):
     sesh = get_session()
@@ -112,7 +112,7 @@ def create_location(name, address, longitude, latitude):
     return location
 
 # Add action
-from models import Actions
+from .models import Actions
 
 def create_action(category, account_id, location_id):
     sesh = get_session()
