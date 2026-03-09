@@ -1,23 +1,23 @@
-﻿id,name,network,signup_rest,deposit_rest,withdrawal_rest,play_rest,network_rest,created_at,updated_at
-0,bet365,bet365,1,0,1,1,0,3/6/2026 21:21,3/6/2026 21:21
-1,betmgm,entain,1,1,1,1,1,3/6/2026 21:21,3/6/2026 21:21
-2,draftkings,draftkings,1,0,0,0,1,3/6/2026 21:21,3/6/2026 21:21
-3,fanatics,fanatics,1,1,1,1,0,3/6/2026 21:21,3/6/2026 21:21
-4,fanduel,flutter,1,0,1,1,0,3/6/2026 21:21,3/6/2026 21:21
-5,goldennugget,draftkings,1,0,0,0,1,3/6/2026 21:21,3/6/2026 21:21
-6,stardust,gan,1,1,1,1,1,3/6/2026 21:21,3/6/2026 21:21
-7,thescorebet,pennentertainment,1,1,1,1,0,3/6/2026 21:21,3/6/2026 21:21
-8,njbally,kambi,1,0,0,0,1,3/6/2026 21:21,3/6/2026 21:21
-9,njbetocean,playtech,1,0,0,0,1,3/6/2026 21:21,3/6/2026 21:21
-10,njbetparx,gan,1,1,1,1,1,3/6/2026 21:21,3/6/2026 21:21
-11,njbetrivers,rushstreetinteractive,1,1,1,1,0,3/6/2026 21:21,3/6/2026 21:21
-12,njcaesars,playtech,1,0,1,1,1,3/6/2026 21:21,3/6/2026 21:21
-13,njhardrock,playtech,1,0,1,1,1,3/6/2026 21:21,3/6/2026 21:21
-14,njjackpocket,gamesys,1,0,0,0,1,3/6/2026 21:21,3/6/2026 21:21
-15,njmohegansun,kambi,1,1,1,1,1,3/6/2026 21:21,3/6/2026 21:21
-16,njmonopoly,gamesys,1,0,0,0,1,3/6/2026 21:21,3/6/2026 21:21
-17,njpartycasino,entain,1,1,1,1,1,3/6/2026 21:21,3/6/2026 21:21
-18,njplaystar,playtech,1,0,0,0,1,3/6/2026 21:21,3/6/2026 21:21
-19,njprimesports,sporttrade,1,0,0,0,0,3/6/2026 21:21,3/6/2026 21:21
-20,njresortscasino,gan,1,1,1,1,1,3/6/2026 21:21,3/6/2026 21:21
-21,njtropicana,playtech,1,1,1,1,1,3/6/2026 21:21,3/6/2026 21:21
+﻿name,network,signup_rest,deposit_rest,withdrawal_rest,play_rest,network_rest,
+bet365,bet365,1,0,1,1,0,
+betmgm,entain,1,1,1,1,1,
+draftkings,draftkings,1,0,0,0,1,
+fanatics,fanatics,1,1,1,1,0,
+fanduel,flutter,1,0,1,1,0,
+goldennugget,draftkings,1,0,0,0,1,
+stardust,gan,1,1,1,1,1,
+thescorebet,pennentertainment,1,1,1,1,0,
+njbally,kambi,1,0,0,0,1,
+njbetocean,playtech,1,0,0,0,1,
+njbetparx,gan,1,1,1,1,1,
+njbetrivers,rushstreetinteractive,1,1,1,1,0,
+njcaesars,playtech,1,0,1,1,1,
+njhardrock,playtech,1,0,1,1,1,
+njjackpocket,gamesys,1,0,0,0,1,
+njmohegansun,kambi,1,1,1,1,1,
+njmonopoly,gamesys,1,0,0,0,1,
+njpartycasino,entain,1,1,1,1,1,
+njplaystar,playtech,1,0,0,0,1,
+njprimesports,sporttrade,1,0,0,0,0,
+njresortscasino,gan,1,1,1,1,1,
+njtropicana,playtech,1,1,1,1,1,
