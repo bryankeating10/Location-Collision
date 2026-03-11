@@ -80,7 +80,7 @@ def create_account(tester_id, casino_id, username: str = None):
         tester_id=tester_id,
         casino_id=casino_id,
         username=username,
-        created_at=datetime.utcnow()
+        created_at=datetime.now()
     )
 
     sesh.add(account)
