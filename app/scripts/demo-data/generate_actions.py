@@ -15,13 +15,21 @@ def main(accounts,locations):
         create_action(
             category=act,
             account_id=acc.id,
-            location=choices(locations,k=1)[0]
+            location_id=choices(locations,k=1)[0].id
         )
 
 if __name__ == '__main__':
+    from time import perf_counter
+    start = perf_counter()
+
     sesh = get_session()
 
     accounts = sesh.scalars(select(Accounts)).all()
     locations = sesh.scalars(select(Locations)).all()
 
     main(accounts=accounts,locations=locations)
+    end = perf_counter()
+
+    runtime = end - start
+    print('Success ✅')
+    print(f'Runtime: {runtime}')
