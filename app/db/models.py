@@ -26,11 +26,12 @@ class Casinos(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(50), nullable=False, unique=True)
     network = Column(String(50), nullable=True)
-    signup_rest = Column(Boolean, nullable=False) # True if the casino has a signup restriction, False otherwise
-    deposit_rest = Column(Boolean, nullable=False) # True if the casino has a deposit restriction, False otherwise
+    signup_rest = Column(Boolean, nullable=False) 
+    deposit_rest = Column(Boolean, nullable=False)
     play_rest = Column(Boolean, nullable=False)
     withdrawal_rest = Column(Boolean, nullable=False)
     network_rest = Column(Boolean, nullable=False)
+    active = Column(Boolean, nullable=True)
     created_at = Column(DateTime, nullable=False)
 
 class Accounts(Base):
