@@ -32,6 +32,7 @@ class Casinos(Base):
     withdrawal_rest = Column(Boolean, nullable=False)
     network_rest = Column(Boolean, nullable=False)
     active = Column(Boolean, nullable=True)
+    updated_at = Column(DateTime, nullable=True)
     created_at = Column(DateTime, nullable=False)
 
 class Accounts(Base):
